@@ -1,0 +1,41 @@
+.hira-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.hira-field__label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.hira-field__input {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.hira-field__input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.hira-field__input:focus {
+  outline: none;
+  border-color: var(--hira-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.hira-field__input--error {
+  border-color: var(--danger);
+}
+
+.hira-field__error {
+  font-size: 0.8rem;
+  color: var(--danger);
+}

@@ -1,0 +1,60 @@
+.status-bar {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.status-bar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.status-bar__avatar-wrap {
+  position: relative;
+}
+
+.status-bar__add-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  background: var(--hira-gradient);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg-surface);
+}
+
+.status-bar__ring {
+  border-radius: var(--radius-full);
+  padding: 2.5px;
+}
+.status-bar__ring--unseen {
+  background: var(--hira-gradient);
+}
+.status-bar__ring--seen {
+  background: var(--border-default);
+}
+.status-bar__ring .hira-avatar__inner {
+  border: 2px solid var(--bg-surface);
+}
+
+.status-bar__label {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60px;
+}

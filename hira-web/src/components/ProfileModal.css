@@ -1,0 +1,78 @@
+.profile-modal {
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-elevated);
+  overflow: hidden;
+}
+
+.profile-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.profile-modal__header h3 {
+  font-size: 1rem;
+}
+
+.profile-modal__avatar-zone {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 8px;
+}
+
+.profile-modal__avatar-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+}
+
+.profile-modal__avatar-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+.profile-modal__avatar-btn:hover .profile-modal__avatar-overlay {
+  opacity: 1;
+}
+
+.profile-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 20px 24px;
+}
+
+.profile-modal__textarea {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  resize: none;
+}
+.profile-modal__textarea:focus {
+  outline: none;
+  border-color: var(--hira-blue);
+}
+
+.profile-modal__counter {
+  align-self: flex-end;
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+}

@@ -1,0 +1,38 @@
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  color: var(--text-tertiary);
+}
+
+.typing-indicator__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--hira-gradient);
+  animation: typing-bounce 1.2s infinite ease-in-out;
+}
+
+.typing-indicator__dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.typing-indicator__dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.typing-indicator__label {
+  font-size: 0.78rem;
+  margin-left: 4px;
+}
+
+@keyframes typing-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}

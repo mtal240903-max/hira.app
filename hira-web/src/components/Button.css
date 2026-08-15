@@ -1,0 +1,79 @@
+.hira-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform var(--transition-fast), opacity var(--transition-fast), background var(--transition-fast);
+  white-space: nowrap;
+}
+
+.hira-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.hira-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hira-btn--full {
+  width: 100%;
+}
+
+/* Tailles */
+.hira-btn--md {
+  padding: 12px 20px;
+  font-size: 0.95rem;
+}
+.hira-btn--sm {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+.hira-btn--icon {
+  padding: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+}
+
+/* Variante primaire : dégradé de marque */
+.hira-btn--primary {
+  background: var(--hira-gradient);
+  color: #ffffff;
+}
+.hira-btn--primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+/* Variante secondaire : surface neutre */
+.hira-btn--secondary {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+}
+.hira-btn--secondary:hover:not(:disabled) {
+  background: var(--bg-active);
+}
+
+/* Variante fantôme : texte seul */
+.hira-btn--ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+.hira-btn--ghost:hover:not(:disabled) {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* Variante danger */
+.hira-btn--danger {
+  background: transparent;
+  color: var(--danger);
+}
+.hira-btn--danger:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.1);
+}

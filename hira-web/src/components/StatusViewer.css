@@ -1,0 +1,131 @@
+.status-viewer {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.status-viewer__progress-row {
+  display: flex;
+  gap: 4px;
+  padding: 10px 12px 0;
+}
+
+.status-viewer__progress-track {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.status-viewer__progress-fill {
+  height: 100%;
+  background: #ffffff;
+  transition: width 50ms linear;
+}
+
+.status-viewer__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  color: #fff;
+}
+
+.status-viewer__author {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.status-viewer__author-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.status-viewer__author-time {
+  font-size: 0.72rem;
+  opacity: 0.7;
+}
+
+.status-viewer__icon-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 6px;
+  opacity: 0.9;
+}
+.status-viewer__icon-btn:hover {
+  opacity: 1;
+}
+
+.status-viewer__body {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.status-viewer__nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 35%;
+  background: transparent;
+  border: none;
+  z-index: 5;
+}
+.status-viewer__nav--prev {
+  left: 0;
+}
+.status-viewer__nav--next {
+  right: 0;
+}
+
+.status-viewer__text-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.status-viewer__text-slide p {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.status-viewer__media {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.status-viewer__caption {
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  right: 16px;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+}
+
+.status-viewer__viewers {
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.82rem;
+  opacity: 0.85;
+}

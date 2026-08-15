@@ -1,0 +1,16 @@
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: hira-minio
+    ports:
+      - "9000:9000"   # API S3
+      - "9001:9001"   # Console web d'administration
+    environment:
+      MINIO_ROOT_USER: hira_admin
+      MINIO_ROOT_PASSWORD: hira_secret_key
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio_data:/data
+
+volumes:
+  minio_data:

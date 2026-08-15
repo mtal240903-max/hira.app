@@ -1,0 +1,111 @@
+.msg-row {
+  display: flex;
+  padding: 3px 20px;
+}
+
+.msg-row--mine {
+  justify-content: flex-end;
+}
+
+.msg-bubble {
+  max-width: 60%;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+.msg-bubble--theirs {
+  background: var(--bubble-in);
+  color: var(--bubble-in-text);
+  border-bottom-left-radius: 4px;
+}
+
+.msg-bubble--mine {
+  background: var(--bubble-out);
+  color: var(--bubble-out-text);
+  border-bottom-right-radius: 4px;
+}
+
+.msg-bubble--deleted {
+  opacity: 0.6;
+}
+
+.msg-bubble__text {
+  font-size: 0.92rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.msg-bubble__text--italic {
+  font-style: italic;
+}
+
+.msg-bubble__media-img {
+  max-width: 280px;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+
+.msg-bubble__audio {
+  max-width: 260px;
+}
+
+.msg-bubble__doc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.msg-bubble__reply {
+  border-left: 3px solid rgba(255, 255, 255, 0.4);
+  padding: 4px 8px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.12);
+  font-size: 0.8rem;
+}
+
+.msg-bubble__reply-author {
+  display: block;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.msg-bubble__reply-text {
+  opacity: 0.75;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.msg-bubble__meta {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.msg-bubble__edited,
+.msg-bubble__time {
+  font-size: 0.68rem;
+  opacity: 0.7;
+}
+
+.msg-bubble__reactions {
+  position: absolute;
+  bottom: -10px;
+  right: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  padding: 1px 6px;
+  font-size: 0.78rem;
+  display: flex;
+  gap: 2px;
+}

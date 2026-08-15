@@ -1,0 +1,133 @@
+.msg-input {
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  padding: 12px 16px;
+}
+
+.msg-input__row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.msg-input__attach {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.msg-input__attach:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.msg-input__textarea {
+  flex: 1;
+  resize: none;
+  max-height: 120px;
+  background: var(--bg-app);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 11px 14px;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.msg-input__textarea:focus {
+  outline: none;
+  border-color: var(--hira-blue);
+}
+
+.msg-input__reply-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--bg-hover);
+  border-left: 3px solid var(--hira-blue);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  font-size: 0.82rem;
+}
+
+.msg-input__reply-author {
+  font-weight: 700;
+  color: var(--hira-blue);
+  display: block;
+}
+
+.msg-input__reply-text {
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.msg-input__reply-cancel {
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  padding: 2px 6px;
+}
+
+.msg-input__emoji-wrap {
+  position: relative;
+}
+
+.msg-input__emoji-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+}
+
+.msg-input__recording {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-app);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 11px 14px;
+}
+
+.msg-input__recording-cancel {
+  background: transparent;
+  border: none;
+  color: var(--danger);
+  padding: 2px;
+}
+
+.msg-input__recording-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: var(--radius-full);
+  background: var(--danger);
+  animation: recording-pulse 1s infinite;
+}
+
+@keyframes recording-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.msg-input__recording-time {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.msg-input__recording-hint {
+  color: var(--text-tertiary);
+  font-size: 0.82rem;
+}

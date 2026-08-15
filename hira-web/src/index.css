@@ -1,0 +1,131 @@
+/* ─────────────────────────────────────────────────────────
+   Hira — système de design
+   Palette dérivée du logo : bulle de dialogue en dégradé
+   cyan → bleu → violet sur fond bleu nuit très sombre.
+   ───────────────────────────────────────────────────────── */
+
+:root {
+  /* Dégradé de marque — repris directement du logo */
+  --hira-cyan: #22d3ee;
+  --hira-blue: #3b82f6;
+  --hira-violet: #a855f7;
+  --hira-gradient: linear-gradient(135deg, var(--hira-cyan) 0%, var(--hira-blue) 55%, var(--hira-violet) 100%);
+
+  /* Rayons, transitions — partagés entre les deux thèmes */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+  --transition-fast: 150ms ease;
+  --transition-base: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ─── Thème sombre (par défaut) ─── */
+:root,
+[data-theme="dark"] {
+  --bg-app: #0a0e1a;
+  --bg-surface: #12172a;
+  --bg-surface-raised: #171d33;
+  --bg-hover: #1d2440;
+  --bg-active: #232b4d;
+
+  --text-primary: #f5f7fa;
+  --text-secondary: #8b92a8;
+  --text-tertiary: #5a6178;
+
+  --border-subtle: #1f2540;
+  --border-default: #2a3155;
+
+  --bubble-out: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  --bubble-out-text: #ffffff;
+  --bubble-in: #1a2038;
+  --bubble-in-text: #f5f7fa;
+
+  --success: #22c55e;
+  --danger: #ef4444;
+  --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* ─── Thème clair ─── */
+[data-theme="light"] {
+  --bg-app: #f7f8fc;
+  --bg-surface: #ffffff;
+  --bg-surface-raised: #ffffff;
+  --bg-hover: #f0f2fa;
+  --bg-active: #e7eaf7;
+
+  --text-primary: #12172a;
+  --text-secondary: #5a6178;
+  --text-tertiary: #8b92a8;
+
+  --border-subtle: #e6e8f2;
+  --border-default: #d8dcec;
+
+  --bubble-out: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+  --bubble-out-text: #ffffff;
+  --bubble-in: #eef0f8;
+  --bubble-in-text: #12172a;
+
+  --success: #16a34a;
+  --danger: #dc2626;
+  --shadow-elevated: 0 8px 32px rgba(20, 24, 50, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-app);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* Focus clavier visible partout — accessibilité */
+:focus-visible {
+  outline: 2px solid var(--hira-blue);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
