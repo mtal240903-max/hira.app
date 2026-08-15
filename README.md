@@ -263,3 +263,4 @@ Remplace la piste vidéo envoyée (`RTCRtpSender.replaceTrack`) par le flux `get
 - [ ] SFU pour les appels de groupe au-delà de 5-6 participants
 - [ ] Chiffrement de bout en bout
 - [ ] Assistant IA, traduction instantanée (Hira 4.0)
+"# hira" 
