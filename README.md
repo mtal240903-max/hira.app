@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Hira Backend
 
 API backend pour Hira — messagerie de l'écosystème MTAL.
@@ -264,3 +265,6 @@ Remplace la piste vidéo envoyée (`RTCRtpSender.replaceTrack`) par le flux `get
 - [ ] Chiffrement de bout en bout
 - [ ] Assistant IA, traduction instantanée (Hira 4.0)
 "# hira" 
+=======
+# hira
+>>>>>>> 743c003550734a95a0f58a11a257ca0bb10077a6
