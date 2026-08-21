@@ -20,12 +20,12 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-// CORS : autorise uniquement les origines définies dans .env
-const allowedOrigins = (process.env.CLIENT_ORIGINS || "").split(",");
+// CORS : autorise les origines définies dans .env et tous les sous-domaines Vercel (.vercel.app)
+const allowedOrigins = (process.env.CLIENT_ORIGINS || "").split(",").map(origin => origin.trim());
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (!origin || allowedOrigins.includes(origin) || origin.endsWith(".vercel.app")) {
         callback(null, true);
       } else {
         callback(new Error("Origine non autorisée par CORS"));

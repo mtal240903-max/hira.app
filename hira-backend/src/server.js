@@ -12,10 +12,20 @@ const PORT = process.env.PORT || 5000;
 // Serveur HTTP brut, nécessaire pour brancher Socket.IO sur Express
 const server = http.createServer(app);
 
-// Socket.IO : prêt pour la partie chat temps réel (Hira 1.0 - messagerie)
+// Liste des origines autorisées de base
+const allowedOrigins = (process.env.CLIENT_ORIGINS || "").split(",").map(origin => origin.trim());
+
+// Socket.IO : sécurisé avec les mêmes règles d'origines
 const io = new Server(server, {
   cors: {
-    origin: (process.env.CLIENT_ORIGINS || "").split(","),
+    origin: (origin, callback) => {
+      // Autorise les requêtes sans origin, celles dans la liste, ou n'importe quel sous-domaine vercel.app
+      if (!origin || allowedOrigins.includes(origin) || origin.endsWith(".vercel.app")) {
+        callback(null, true);
+      } else {
+        callback(new Error("Origine non autorisée par CORS (Socket.IO)"));
+      }
+    },
     credentials: true,
   },
 });

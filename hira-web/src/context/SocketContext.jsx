@@ -4,7 +4,8 @@ import { useAuth } from "./AuthContext";
 
 const SocketContext = createContext(null);
 
-const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || "http://localhost:5000";
+// Fallback sur Render au lieu de localhost
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || "https://hira-app.onrender.com";
 
 export function SocketProvider({ children }) {
   const { user } = useAuth();
