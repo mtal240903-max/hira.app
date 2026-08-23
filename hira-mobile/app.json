@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "Hira",
+    "slug": "hira-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "hira",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mtal.hira",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Hira a besoin de la caméra pour les appels vidéo et l'envoi de photos.",
+        "NSMicrophoneUsageDescription": "Hira a besoin du micro pour les appels et les messages vocaux.",
+        "NSPhotoLibraryUsageDescription": "Hira a besoin d'accéder à tes photos pour les partager en conversation."
+      }
+    },
+    "android": {
+      "package": "com.mtal.hira",
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0E1A",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": ["CAMERA", "RECORD_AUDIO", "READ_EXTERNAL_STORAGE"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Hira a besoin d'accéder à tes photos pour les partager en conversation."
+        }
+      ]
+    ],
+    "extra": {
+      "apiUrl": "http://192.168.48.198:5000/api",
+      "socketUrl": "http://192.168.48.198.42:5000",
+      "wuroenConnectUrl": "https://wuroen-app.onrender.com/api/auth/connect"
+    }
+  }
+}

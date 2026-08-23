@@ -20,9 +20,16 @@ const register = asyncHandler(async (req, res) => {
     );
   }
 
-  const existing = await User.findOne({
-    $or: [{ email: email || null }, { phone: phone || null }],
-  });
+  // Correction : Construction dynamique des conditions pour éviter le bug du `null`
+  const conditions = [];
+  if (email) conditions.push({ email });
+  if (phone) conditions.push({ phone });
+
+  let existing = null;
+  if (conditions.length > 0) {
+    existing = await User.findOne({ $or: conditions });
+  }
+
   if (existing) {
     throw new AppError("Un compte existe déjà avec cet email ou ce numéro", 409);
   }
